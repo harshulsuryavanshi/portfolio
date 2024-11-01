@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>About Section</title>
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+	<style>
+		body {
+			font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		}
+
+		.portfolio-link {
+			font-weight: bold;
+			/* Makes the text bold */
+		}
+
+		.about-section {
+			text-align: center;
+			padding: 50px 0;
+		}
+
+		.about-section h2 {
+			font-size: 2.5rem;
+			margin-bottom: 20px;
+		}
+
+		.about-section img {
+			width: 200px;
+			/* Adjust the size as needed */
+			height: 200px;
+			border-radius: 50%;
+			/* Makes the image round */
+			margin-bottom: 20px;
+		}
+
+		.about-section p {
+			color: #333;
+		}
+
+		/* Additional CSS for Projects Section */
+		.projects-section h2 {
+			margin-bottom: 40px;
+			font-size: 2.5rem;
+		}
+
+		.card {
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+			/* Adds a subtle shadow around the card */
+		}
+
+		.card-img-top {
+			max-height: 180px;
+			object-fit: cover;
+			height: 200px;
+			width: 100%;
+		}
+
+		.card-body {
+			padding: 15px;
+		}
+
+		.card-title {
+			font-size: 1.25rem;
+		}
+
+		.card-text {
+			margin-bottom: 15px;
+		}
+
+		/* Additional CSS for Skills Section */
+		.skills-section h2 {
+			margin-bottom: 40px;
+			font-size: 2.5rem;
+		}
+
+		.skills-section .card {
+			height: 470px;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+		}
+
+		.skills-section .card-img-top {
+			padding: 20px;
+			/* Add padding around your images if needed */
+			background-color: #f8f9fa;
+			/* Adjust the background color if your images have transparent areas */
+			height: 180px;
+			/* Fixed height for consistency */
+			object-fit: contain;
+			/* This will make sure the image is scaled properly within the container */
+		}
+
+		.skills-section .card-body {
+			padding: 15px;
+		}
+
+		.skills-section .card-title {
+			font-size: 1.25rem;
+			margin-bottom: 15px;
+		}
+
+		.skills-section .btn-outline-primary {
+			color: #007bff;
+			border-color: #007bff;
+		}
+
+		.skills-section .btn-outline-primary:hover {
+			color: #fff;
+			background-color: #007bff;
+			border-color: #007bff;
+		}
+
+		/* Additional CSS for Contact Section */
+		.contact-section {
+			padding: 50px 0;
+		}
+
+		.contact-section .row {
+			justify-content: center;
+			margin-bottom: 30px;
+		}
+
+		.contact-section h2 {
+			font-size: 2.5rem;
+			margin-bottom: 40px;
+		}
+
+		.contact-section p {
+			font-size: 1.2rem;
+			margin-bottom: 20px;
+		}
+
+		.social-icon {
+			width: 50px;
+			margin-bottom: 10px;
+		}
+
+		/* Hover effect for icons */
+		.social-icon:hover {
+			opacity: 0.7;
+		}
+
+		/* Style for links in the Contact section */
+		.contact-section a {
+			color: #fff;
+			text-decoration: none;
+			/* Removes underline from links */
+			display: inline-block;
+			/* Allows for margin on the bottom */
+			margin-bottom: 10px;
+		}
+
+		.contact-section a:hover {
+			color: #ddd;
+			/* Color when hovering over the link */
+		}
+
+		/* CSS for Sticky Navbar */
+		.navbar {
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+			background-color: rgb(38, 37, 37);
+		}
+
+		.navbar-dark .navbar-nav .nav-link {
+			font-size: 18px;
+			padding: 15px;
+			color: white;
+		}
+
+		.navbar-dark .navbar-nav .nav-link:hover {
+			color: yellow;
+			/* Changes the hover color to yellow */
+		}
+
+		/* Ensure padding is added to body to avoid content being hidden behind the navbar */
+		body {
+			padding-top: 56px;
+			/* Adjust this value based on the height of your navbar */
+		}
+
+		/* Smooth scroll */
+		html {
+			scroll-behavior: smooth;
+		}
+
+		/* Style for navigation bar links */
+		.navbar-nav .nav-link {
+			color: white;
+		}
+
+		.navbar-nav .nav-link:hover {
+			color: yellow;
+		}
+
+		/* Media query for responsive navbar collapsing */
+		@media (max-width: 992px) {
+			.navbar-collapse {
+				background-color: #343a40;
+				/* Same as navbar color for seamless look */
+			}
+		}
+
+		.resume-section {
+			padding: 50px 0;
+		}
+
+		.resume-section .card {
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+		}
+
+		.resume-section .btn-primary {
+			background-color: #007bff;
+			border: none;
+		}
+
+		.resume-section .btn-primary:hover {
+			background-color: #0056b3;
+		}
+
+		.resume-section .card-img-top {
+			padding: 20px;
+			/* Add padding around your images if needed */
+			background-color: #fff;
+			/* Adjust the background color if your images have transparent areas */
+			height: 180px;
+			/* Fixed height for consistency */
+			object-fit: contain;
+		}
+
+		.resume-section .resume-img {
+			width: auto;
+			height: 100%;
+			max-width: 100%;
+			display: block;
+			margin: 0 auto;
+		}
+	</style>
+
+</head>
+
+<body>
+
+	<section id='about' class="about-section">
+		<div class="container">
+			<h2>Hello, I'm Harshul</h2>
+			<img src="images/about/1.jpg" alt="About Me">
+			<p>Aspiring Data Scientist with a strong foundation in data analysis, statistical modeling, and business
+				analytics. Currently enhancing my skills in Data Science and Analysis with a focus on tools such as
+				Python, SQL, Power BI, Tableau, and Excel. I am passionate about transforming data into actionable
+				insights and solving complex business problems through data-driven decision-making.
+				<br>
+				I bring a background in Finance and IT, gained during my ongoing MBA program, where I have developed an
+				understanding of financial principles and the impact of technology on business operations. This
+				knowledge complements my data science training, allowing me to approach problems from both a technical
+				and a business perspective.
+				<br>
+				Although I am a fresher, I am dedicated to continuous learning and actively seeking opportunities to
+				apply my skills in real-world projects. I am excited to connect with professionals in the field, share
+				knowledge, and collaborate on data-driven solutions.
+			</p>
+		</div>
+	</section>
+
+
+	<!-- Projects Section -->
+	<section id="projects" class="projects-section bg-light" id="projects">
+		<div class="container">
+			<h2 class="text-center">Projects</h2>
+			<div class="row">
+				<!-- Project 1 -->
+				<div class="col-md-4 mb-4">
+					<div class="card">
+						<img src="images/projects/one.png" class="card-img-top" alt="Project 1">
+						<div class="card-body">
+							<h5 class="card-title">Project 1</h5>
+							<p class="card-text">I'm working on data science projects that I'll be sharing soon. Each project is focused on delivering data-driven insights to solve real-world problems. Stay tuned for updates!</p>
+							<a href="https://drive.google.com/drive/folders/1xbMifSDlxERQtE-QFPjYtSAs4gdWuSE1" class="btn btn-primary">Source Code</a>
+						</div>
+					</div>
+				</div>
+				<!-- Project 2 -->
+				<div class="col-md-4 mb-4">
+					<div class="card">
+						<img src="images/projects/two.png" class="card-img-top" alt="Project 2">
+						<div class="card-body">
+							<h5 class="card-title">Project 2</h5>
+							<p class="card-text">I'm working on data science projects that I'll be sharing soon. Each project is focused on delivering data-driven insights to solve real-world problems. Stay tuned for updates!</p>
+							<a href="https://drive.google.com/drive/folders/1xbMifSDlxERQtE-QFPjYtSAs4gdWuSE1" class="btn btn-primary">Source Code</a>
+						</div>
+					</div>
+				</div>
+				<!-- Project 3 -->
+				<div class="col-md-4 mb-4">
+					<div class="card">
+						<img src="images/projects/three.jpg" class="card-img-top" alt="Project 3">
+						<div class="card-body">
+							<h5 class="card-title">Project 3</h5>
+							<p class="card-text">I'm working on data science projects that I'll be sharing soon. Each project is focused on delivering data-driven insights to solve real-world problems. Stay tuned for updates!</p>
+							<a href="https://drive.google.com/drive/folders/1xbMifSDlxERQtE-QFPjYtSAs4gdWuSE1" class="btn btn-primary">Source Code</a>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+
+	<!-- Skills Section -->
+	<section id="skills" class="skills-section bg-white" id="skills">
+		<div class="container">
+			<h2 class="text-center">Skills</h2>
+			<div class="row">
+				<!-- Skill 1 -->
+				<div class="col-md-6 mb-4">
+					<div class="card">
+						<img src="images/skills/1.png" class="card-img-top" alt="Python">
+						<div class="card-body">
+							<h5 class="card-title">Python</h5>
+							<p class="card-text">I bring strong Python skills to my data science work, leveraging
+								powerful libraries like Pandas, NumPy, and Matplotlib for insightful data analysis and
+								clear visualizations. With hands-on experience in machine learning using Scikit-Learn, I
+								can transform raw data into valuable predictions, helping to drive informed
+								decision-making. Python is my go-to tool for solving complex data challenges with
+								efficiency and precision.</p>
+							<a href="https://drive.google.com/drive/folders/1xAsVGqdSn-gd8uGD7NlI78CDMirVqMkn"
+								class="btn btn-outline-primary">My Certifications</a>
+						</div>
+					</div>
+				</div>
+				<!-- Skill 2 -->
+				<div class="col-md-6 mb-4">
+					<div class="card">
+						<img src="images/skills/2.png" class="card-img-top" alt="Data Visualization">
+						<div class="card-body">
+							<h5 class="card-title">Data Visualization</h5>
+							<p class="card-text">I specialize in data visualization, using tools like Matplotlib,
+								Seaborn, Power BI, and Tableau to turn complex data into visually compelling insights.
+								My approach focuses on storytelling through data, making key metrics, patterns, and
+								trends easy to interpret. By leveraging these powerful visualization tools, I help
+								bridge the gap between data analysis and actionable decision-making, ensuring that
+								insights are both impactful and accessible.</p>
+							<a href="https://drive.google.com/drive/folders/1xAsVGqdSn-gd8uGD7NlI78CDMirVqMkn"
+								class="btn btn-outline-primary">My Certifications</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Skill 3 -->
+				<div class="col-md-6 mb-4">
+					<div class="card">
+						<img src="images/skills/3.png" class="card-img-top" alt="SQL">
+						<div class="card-body">
+							<h5 class="card-title">SQL</h5>
+							<p class="card-text">I have a strong command of SQL, enabling me to efficiently query,
+								manipulate, and manage data across complex databases. I am skilled in writing optimized
+								queries, joining tables, and performing data aggregation to extract meaningful insights.
+								My SQL expertise supports my data analysis work by providing clean, well-structured
+								data, laying a solid foundation for deeper analysis and decision-making. </p>
+							<a href="https://drive.google.com/drive/folders/1xAsVGqdSn-gd8uGD7NlI78CDMirVqMkn"
+								class="btn btn-outline-primary">My Certifications</a>
+						</div>
+					</div>
+				</div>
+				<!-- Skill 4 -->
+				<div class="col-md-6 mb-4">
+					<div class="card">
+						<img src="images/skills/4.png" class="card-img-top" alt="Data Storytelling">
+						<div class="card-body">
+							<h5 class="card-title">Data Storytelling</h5>
+							<p class="card-text">I excel in data storytelling, transforming raw data into compelling
+								narratives that drive understanding and engagement. I use visualizations and key
+								insights to highlight patterns, trends, and actionable points that speak to both
+								technical and non-technical audiences. My goal is to make data relatable, ensuring that
+								insights are not only seen but truly understood and applied to support impactful
+								decision-making. Ultimately, I strive to bridge the gap between data and strategy,
+								empowering stakeholders to make data-driven choices with confidence.</p>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Resume Section -->
+	<section id="resume" class="resume-section bg-light">
+		<div class="container">
+			<h2 class="text-center">Resume</h2>
+			<div class="row justify-content-center">
+				<div class="col-md-6">
+					<div class="card">
+						<img src="icons/resumes.png" class="card-img-top resume-img" alt="Resume Preview">
+						<div class="card-body text-center">
+
+							<p class="card-text">Check out my full resume for more details about my experience, skills,
+								and projects.</p>
+							<a href="https://drive.google.com/drive/folders/1xMP56bZjwX8JeNT76SIgE1_N_KHzsvEq"
+								class="btn btn-primary">Download Resume</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+	<!-- Contact Me Section -->
+	<section id="contact" class="contact-section text-center text-white bg-dark">
+		<div class="container">
+			<h2>Contact Me</h2>
+			<div class="row">
+				<div class="col-lg-6">
+					<p><i class="fas fa-envelope"></i> harshulsuryavanshi@gmail.com</p>
+				</div>
+				<div class="col-lg-6">
+					<p><i class="fas fa-phone"></i>+91 8791727667</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-2 col-md-4 mb-4">
+					<a href="https://www.linkedin.com/in/harshulsuryavanshi" target="_blank">
+						<img src="icons/linkedin.png" alt="LinkedIn" class="social-icon">
+						LinkedIn
+					</a>
+				</div>
+
+				<div class="col-lg-2 col-md-4 mb-4">
+					<a href="https://github.com/harshulsuryavanshi" target="_blank">
+						<img src="icons/github.png" alt="GitHub" class="social-icon">
+						GitHub
+					</a>
+				</div>
+				<div class="col-lg-2 col-md-4 mb-4">
+					<a href="https://www.kaggle.com/harshulsuryavanshi" target="_blank">
+						<img src="icons/kaggle.jpg" alt="Kaggle" class="social-icon">
+						Kaggle
+					</a>
+				</div>
+
+			</div>
+		</div>
+	</section>
+
+	<!-- Sticky Navigation Bar -->
+	<nav class="navbar navbar-expand-lg navbar-dark  fixed-top">
+		<div class="container">
+			<a class="navbar-brand portfolio-link" href="#home">Harshul Suryavanshi</a>
+
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="#home">Home</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#about">About</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#projects">Projects</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#skills">Skills</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#resume">Resume</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#contact">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+
+	<!-- Bootstrap JS and dependencies (jQuery and Popper) -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.5/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
